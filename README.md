@@ -18,4 +18,8 @@ Fetch, display, and search for brewery companies from the given API endpoint, us
 
 ## Optional
 
-You can also use the queries listed in the documentation to sort and limit the returned data and build pagination feature.
+7. Use the queries listed in the documentation to sort and limit the returned data and build pagination feature.
+
+8. Create a contact form so that user can send question along with their contact information. 
+
+9. Use Google-login option to pre-fill the contact form for user.
