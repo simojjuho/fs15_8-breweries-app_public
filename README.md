@@ -1,4 +1,6 @@
 # Breweries App
+by Juho Simojoki
+This product is an assignment at Integrify Finland Full-Stack Academy (Microsoft stack).
 
 Fetch, display, and search for brewery companies from the given API endpoint, using React and TypeScript
 
