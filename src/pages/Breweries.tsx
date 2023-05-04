@@ -3,12 +3,11 @@ import React, { useEffect, useState } from 'react'
 import { Brewery } from '../Types/Brewery'
 import { getAll } from '../services'
 import { AxiosError } from 'axios'
+import useFilter from '../hooks/useFilter'
 
 const Breweries = () => {
     const [breweries, setBreweries] = useState<Brewery[] | undefined>()
-    const [filter, setFilter] = useState('')
-    const [filteredItems, setFilteredItems] = useState<Brewery[] | undefined>()
-
+    
     useEffect(() => {
         getAll().then(data => {
             setBreweries(data)
@@ -20,19 +19,11 @@ const Breweries = () => {
         })
     }, [])
 
-    useEffect(() => {
-        const timeoutId = setTimeout(() => {
-            setFilteredItems(breweries?.filter(item => item.name.toLowerCase().includes(filter)))
-        }, 1000)
-
-        return () => clearTimeout(timeoutId)
-    }, [filter, breweries])
-
-    const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setFilter(e.target.value)
+    const filterFunc = (breweries: Brewery[], filter: string): Brewery[] => {
+        return breweries?.filter(item => item.name.toLowerCase().includes(filter.toLowerCase()))
     }
 
-
+    const { changeHandler, filteredItems, filter } = useFilter<Brewery>(filterFunc, breweries)
   return (
     <div>
         <input 
