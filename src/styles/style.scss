@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+}
+
+#root {
+    background-image: url('../images/Brewery-Wallpaper-Download-Free.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    min-height: 100vh;
+
+    h1 {
+        padding-left: 2em;
+    }
+
+    #background {
+        padding: 5em;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-around;
+        gap: 2em;
+        padding: 0 3em;
+    }
+}
+
+
+

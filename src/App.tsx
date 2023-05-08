@@ -1,10 +1,13 @@
 import React from 'react'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
+import './styles/style.scss'
+
 import Home from './pages/Home'
 import Breweries from './pages/Breweries'
 import ErrorPage from './pages/ErrorPage'
-import SingleBrewery from './pages/SingleBrewery'
+import SingleBreweryPage from './pages/SingleBreweryPage'
+
 
 
 
@@ -20,7 +23,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'breweries/:id',
-        element: <SingleBrewery />
+        element: <SingleBreweryPage />
       }
     ]    
   }
@@ -31,7 +34,7 @@ const router = createBrowserRouter([
 
 const App = () => {
   return (
-    <RouterProvider router={router} />
+      <RouterProvider router={router} />
   )
 }
 

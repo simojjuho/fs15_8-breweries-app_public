@@ -1,13 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
+import { AxiosError } from 'axios'
+import { TextField } from '@mui/material'
 
 import { Brewery } from '../Types/Brewery'
 import { getAll } from '../services'
-import { AxiosError } from 'axios'
 import useFilter from '../hooks/useFilter'
+import BreweryOnList from '../components/BreweryOnList'
+import StyledGridContainer from '../components/styledComponents/StyledGridContainer'
+import StyledPageContainer from '../components/styledComponents/StyledPageContainer'
 
 const Breweries = () => {
+
     const [breweries, setBreweries] = useState<Brewery[] | undefined>()
-    
     useEffect(() => {
         getAll().then(data => {
             setBreweries(data)
@@ -24,17 +28,25 @@ const Breweries = () => {
     }
 
     const { changeHandler, filteredItems, filter } = useFilter<Brewery>(filterFunc, breweries)
+
   return (
-    <div>
-        <input 
+    <StyledPageContainer id='breweriesContainer' maxWidth={'xl'}>
+        <TextField 
             type='text'
+            variant="filled"
             id='filterInput'
             value={filter}
             onChange={ changeHandler }
+            placeholder='Search breweries'
+            label='Search by name'
+            color='primary'
         />
-        {filteredItems?.map(brewery => {
-        return <p key={brewery.id}>{brewery.name}</p>
-    })}</div>
+        <StyledGridContainer container gap={3} columns={12} maxWidth={'xl'}  justifyContent={'center'}>
+            {filteredItems?.map(brewery => {
+            return <BreweryOnList key={brewery.id} brewery={brewery} />
+            })}
+        </StyledGridContainer>
+    </StyledPageContainer>
   )
 }
 
