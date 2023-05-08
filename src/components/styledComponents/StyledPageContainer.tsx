@@ -2,7 +2,7 @@ import { Container, ContainerProps, styled } from "@mui/material"
 
 
 const StyledPageContainer = styled(Container)<ContainerProps> (({theme}) => ({
-    margin: '3em 0',
+    margin: '3em auto',
     padding: '3em',
     display: 'flex',
     flexDirection: 'column',

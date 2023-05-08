@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { Box, Link } from '@mui/material'
 
 import { Brewery } from '../Types/Brewery'
@@ -17,12 +17,14 @@ const SingleBreweryPage = () => {
             })
         }
     }, [id])
+    const navigate = useNavigate()
 
 
   return (
     <StyledPageContainer sx={{
         flexDirection: 'row',
-        justifyContent: 'space-around'
+        justifyContent: 'space-around',
+        flexWrap: 'wrap'
     }}>
         <Box>
             <h2>{brewery?.name}</h2>
@@ -37,9 +39,8 @@ const SingleBreweryPage = () => {
             </p>
         </Box>
         <iframe
+            className='mapsFrame'
             title='mapsEmbed'
-            width="600"
-            height="450"
             loading="lazy"
             allowFullScreen
             referrerPolicy="no-referrer-when-downgrade"

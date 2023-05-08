@@ -17,10 +17,8 @@ const Home = () => {
             <Link component={RouterLink} to={'/breweries'}>Breweries</Link>
           </Box>
         </StyledHeader>
-        <Container id='appContainer' >
-            <Outlet />
-            <Container role='footer'></Container>
-        </Container>
+        <Outlet />
+        <Container role='footer'></Container>
       </div>
     </ThemeProvider>
   )

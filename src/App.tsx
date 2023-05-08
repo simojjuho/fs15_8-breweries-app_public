@@ -7,6 +7,7 @@ import Home from './pages/Home'
 import Breweries from './pages/Breweries'
 import ErrorPage from './pages/ErrorPage'
 import SingleBreweryPage from './pages/SingleBreweryPage'
+import Landing from './pages/Landing'
 
 
 
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
     element: <Home />,
     errorElement: <ErrorPage />,
     children: [
+      {
+        path: '/',
+        element: <Landing />
+      },
       {
         path: 'breweries',
         element: <Breweries />
