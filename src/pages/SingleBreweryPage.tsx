@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { Box, Link } from '@mui/material'
+import { Box, IconButton, Link } from '@mui/material'
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 
 import { Brewery } from '../Types/Brewery'
@@ -19,40 +19,42 @@ const SingleBreweryPage = () => {
         }
     }, [id])
     const navigate = useNavigate()
+    const clickHandler = () => {
+        navigate('/breweries')
+    }
+    return (
+        <StyledPageContainer sx={{
+            flexDirection: 'row',
+            justifyContent: 'space-around',
+            flexWrap: 'wrap'
+        }}>
+            <IconButton onClick={clickHandler}>
+                <ArrowLeftIcon />
+            </IconButton>
+            <Box>
+                <h2>{brewery?.name}</h2>
+                <p>
+                    Type of brewery: {brewery?.brewery_type}< br />
+                    Address: {brewery?.address_1}, {brewery?.postal_code}, 
+                    {brewery?.city} / {brewery?.state}<br />
+                    Country of brewery: {brewery?.country}<br />
+                    Phone number: {brewery?.phone}<br />
+                    Find them on <Link href={`https://www.google.com/maps/search/?api=1&query=${brewery?.name}+${brewery?.city}`}>map.</Link><br />
+                    Url: <Link href={brewery?.website_url}>press</Link>    
+                </p>
+            </Box>
+            <iframe
+                className='mapsFrame'
+                title='mapsEmbed'
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+                src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBPg4nSA2QW6hVAevXXhmwXfE8BIi_BQOM
+                    &q=${brewery?.name}+${brewery?.state}`}>
 
-
-
-  return (
-    <StyledPageContainer sx={{
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        flexWrap: 'wrap'
-    }}>
-        <ArrowLeftIcon />
-        <Box>
-            <h2>{brewery?.name}</h2>
-            <p>
-                Type of brewery: {brewery?.brewery_type}< br />
-                Address: {brewery?.address_1}, {brewery?.postal_code}, 
-                {brewery?.city} / {brewery?.state}<br />
-                Country of brewery: {brewery?.country}<br />
-                Phone number: {brewery?.phone}<br />
-                Find them on <Link href={`https://www.google.com/maps/search/?api=1&query=${brewery?.name}+${brewery?.city}`}>map.</Link><br />
-                Url: <Link href={brewery?.website_url}>press</Link>    
-            </p>
-        </Box>
-        <iframe
-            className='mapsFrame'
-            title='mapsEmbed'
-            loading="lazy"
-            allowFullScreen
-            referrerPolicy="no-referrer-when-downgrade"
-            src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBPg4nSA2QW6hVAevXXhmwXfE8BIi_BQOM
-                &q=${brewery?.name}+${brewery?.state}`}>
-
-        </iframe>
-    </StyledPageContainer>
-  )
+            </iframe>
+        </StyledPageContainer>
+    )
 }
 
 export default SingleBreweryPage
