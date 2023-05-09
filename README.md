@@ -1,27 +1,80 @@
 # Breweries App
 by Juho Simojoki
 This product is an assignment at Integrify Finland Full-Stack Academy (Microsoft stack).
+You can find the deployment [here](https://sunny-centaur-ebee99.netlify.app)
 
-Fetch, display, and search for brewery companies from the given API endpoint, using React and TypeScript
+## Technologies
+- TypeScript
+- React
+- Axios
+- Material UI
 
-## Requirements
 
-1. Check the documentation at [https://www.openbrewerydb.org/documentation](https://www.openbrewerydb.org/documentation) Fetch and display information of all the companies.
+## Description
 
-2. Have proper display and routing that user can switch to/back from specific company's detailed page
+This app is a simple app for searching breweries from [here](https://www.openbrewerydb.org/documentation). Every brewery has a simple details page with embedded Google Maps frame.
+The seach input can be used to search the breweries by their name case non-sensitively.
 
-3. Create search component to enable user to input text and search for companies by name.
+## Project tree
 
-4. Use MaterialUI to make your design more appealing and responsive
-
-5. Implement performance optimization where applicable
-
-6. Deploy your application and rewrite README file
-
-## Optional
-
-7. Use the queries listed in the documentation to sort and limit the returned data and build pagination feature.
-
-8. Create a contact form so that user can send question along with their contact information. 
-
-9. Use Google-login option to pre-fill the contact form for user.
+```
+├── build
+│   ├── asset-manifest.json
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── manifest.json
+│   ├── planning
+│   ├── robots.txt
+│   └── static
+│       ├── css
+│       │   ├── main.270723d3.css
+│       │   └── main.270723d3.css.map
+│       ├── js
+│       │   ├── main.fa61fd28.js
+│       │   ├── main.fa61fd28.js.LICENSE.txt
+│       │   └── main.fa61fd28.js.map
+│       └── media
+│           ├── beer-at-brewery.ec0720bc31a27c548736.jpg
+│           └── Brewery-Wallpaper-Download-Free.1413a113ee66d3b67663.jpg
+├── package.json
+├── package-lock.json
+├── public
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── manifest.json
+│   ├── planning
+│   └── robots.txt
+├── README.md
+├── src
+│   ├── App.tsx
+│   ├── components
+│   │   ├── BreweryOnList.tsx
+│   │   ├── onLoading.tsx
+│   │   └── styledComponents
+│   │       ├── StyledCard.tsx
+│   │       ├── StyledGridContainer.tsx
+│   │       ├── StyledHeader.tsx
+│   │       └── StyledPageContainer.tsx
+│   ├── hooks
+│   │   └── useFilter.tsx
+│   ├── images
+│   │   ├── beer-at-brewery.jpg
+│   │   └── Brewery-Wallpaper-Download-Free.jpg
+│   ├── index.tsx
+│   ├── pages
+│   │   ├── Breweries.tsx
+│   │   ├── ErrorPage.tsx
+│   │   ├── Home.tsx
+│   │   ├── Landing.tsx
+│   │   └── SingleBreweryPage.tsx
+│   ├── react-app-env.d.ts
+│   ├── reportWebVitals.ts
+│   ├── services.ts
+│   ├── styles
+│   │   └── style.scss
+│   ├── themes
+│   │   └── globalTheme.ts
+│   └── Types
+│       └── Brewery.ts
+└── tsconfig.json
+```
