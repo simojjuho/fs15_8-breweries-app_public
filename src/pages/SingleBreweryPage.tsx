@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { Box, Link } from '@mui/material'
+import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 
 import { Brewery } from '../Types/Brewery'
 import { getOne } from '../services'
@@ -20,12 +21,14 @@ const SingleBreweryPage = () => {
     const navigate = useNavigate()
 
 
+
   return (
     <StyledPageContainer sx={{
         flexDirection: 'row',
         justifyContent: 'space-around',
         flexWrap: 'wrap'
     }}>
+        <ArrowLeftIcon />
         <Box>
             <h2>{brewery?.name}</h2>
             <p>

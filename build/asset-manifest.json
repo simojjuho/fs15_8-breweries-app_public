@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.270723d3.css",
+    "main.js": "/static/js/main.265ce7e7.js",
+    "static/media/Brewery-Wallpaper-Download-Free.jpg": "/static/media/Brewery-Wallpaper-Download-Free.1413a113ee66d3b67663.jpg",
+    "static/media/beer-at-brewery.jpg": "/static/media/beer-at-brewery.ec0720bc31a27c548736.jpg",
+    "index.html": "/index.html",
+    "main.270723d3.css.map": "/static/css/main.270723d3.css.map",
+    "main.265ce7e7.js.map": "/static/js/main.265ce7e7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.270723d3.css",
+    "static/js/main.265ce7e7.js"
+  ]
+}
